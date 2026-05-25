@@ -1,0 +1,98 @@
+body{
+    background: linear-gradient(to bottom, #e8f1ff, #ffffff);
+    font-family: Arial, sans-serif;
+    color: #1a3d7c;
+    text-align: center;
+    padding: 20px;
+}
+h1{
+    text-align: center;
+    color:#1a3d7c;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+#landscapes {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 4px solid #1a3d7c;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+#slide {
+    display: flex;               /* line up images horizontally */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.9s ease;  /* smooth sliding */
+}
+#slide li {
+    min-width: 600px;   /* same width as #landscapes */
+    height: 400px;
+    position: relative;
+}
+#slide li.active img{
+    transform: scale(1.03);
+}
+
+#slide li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+}
+#slide p{
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(26, 61, 124, 0.75);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+
+#slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+#controls button {
+  background: #1a3d7c;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+#controls button:hover {
+  background: #2f5bb7;
+  transform: translateY(-2px);
+}
+#controls button:active{
+    transform: translateY(0);
+}
